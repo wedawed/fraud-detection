@@ -1,0 +1,1454 @@
+2025-01-03 15:48:27,708 - ERROR - Fraudulent emitens file not found at fraudulent_emitens.json.
+2025-01-03 15:48:58,987 - INFO - Loaded 27 fraudulent emitens.
+2025-01-03 15:49:00,359 - INFO - Data loaded successfully from C:\Users\User\OneDrive - UNIVERSITAS INDONESIA\Perkuliahan\Semester 9\Tesis\Data Processing\Data\fs_data_clean.xlsx. Shape: (3453, 44)
+2025-01-03 15:49:00,359 - INFO - Starting data preprocessing...
+2025-01-03 15:49:00,363 - INFO - Feature engineering completed: 'emiten' column created.
+2025-01-03 15:49:00,367 - INFO - Label encoding completed: 'emiten_label' column created.
+2025-01-03 15:49:00,367 - INFO - Dropped 31 unnecessary columns.
+2025-01-03 15:49:00,375 - INFO - Numeric columns: 14
+2025-01-03 15:49:00,387 - INFO - Non-numeric columns: 0
+2025-01-03 15:49:00,400 - INFO - Missing values imputed for numeric columns using median strategy.
+2025-01-03 15:49:00,400 - INFO - Class Distribution after encoding:
+emiten_label
+0    3426
+1      27
+Name: count, dtype: int64
+2025-01-03 15:49:00,400 - INFO - Data preprocessing completed.
+2025-01-03 15:49:00,408 - INFO - Train-Test split: Train=(2417, 14), Test=(1036, 14)
+2025-01-03 15:49:00,408 - INFO - Training Labels Distribution: Counter({0: 2398, 1: 19})
+2025-01-03 15:49:00,408 - INFO - Test Labels Distribution: Counter({0: 1028, 1: 8})
+2025-01-03 15:49:00,421 - INFO - Feature scaling completed using Min-Max Scaler.
+2025-01-03 15:49:00,421 - INFO - Resampling pipeline created with SMOTE and Random Under Sampling.
+2025-01-03 15:49:00,425 - INFO - After Resampling: Counter({0: 958, 1: 479})
+2025-01-03 15:49:00,433 - INFO - Starting hyperparameter tuning using Genetic Algorithm...
+2025-01-03 15:49:00,438 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,438 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,438 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,438 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,441 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,441 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,481 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,482 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,482 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,482 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,482 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,494 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,494 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,494 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,494 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,494 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,494 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,496 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,497 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,497 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,500 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,500 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,501 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,501 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,501 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,502 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,502 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,502 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,504 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,512 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,513 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,513 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,513 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,514 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - INFO - Generation 1: Best Fitness = 0.0000
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,523 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,531 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - INFO - Generation 2: Best Fitness = 0.0000
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,539 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - INFO - Generation 3: Best Fitness = 0.0000
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,547 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,555 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,556 - INFO - Generation 4: Best Fitness = 0.0000
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,563 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - INFO - Generation 5: Best Fitness = 0.0000
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,572 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,580 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,582 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,585 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,585 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,585 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - INFO - Generation 6: Best Fitness = 0.0000
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,588 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,596 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,596 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,596 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,596 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,596 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,596 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,596 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,596 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,596 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,596 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,596 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,596 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,599 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,599 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,599 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,599 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,599 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,599 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,599 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,601 - INFO - Generation 7: Best Fitness = 0.0000
+2025-01-03 15:49:00,601 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,601 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,604 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - INFO - Generation 8: Best Fitness = 0.0000
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,612 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,620 - INFO - Generation 9: Best Fitness = 0.0000
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,628 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,636 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,636 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,638 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,638 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,640 - INFO - Generation 10: Best Fitness = 0.0000
+2025-01-03 15:49:00,640 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,640 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,640 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,640 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,640 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,640 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,640 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,640 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,640 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 15:49:00,640 - INFO - Best Solution: [np.float64(0.0971984431305917) 307 np.int64(7) np.int64(4)
+ 0.8633846851361612 0.8741708094337663 np.float64(0.38582801320718396)
+ 0.2053440441108917 0.9402152886063047 4]
+2025-01-03 15:49:00,640 - INFO - Best Solution Fitness (F1-Score): 0.0000
+2025-01-03 15:49:00,640 - INFO - Best Hyperparameters from GA:
+2025-01-03 15:49:00,640 - INFO - learning_rate: 0.0971984431305917
+2025-01-03 15:49:00,644 - INFO - n_estimators: 307
+2025-01-03 15:49:00,644 - INFO - max_depth: 7
+2025-01-03 15:49:00,644 - INFO - min_child_weight: 4
+2025-01-03 15:49:00,644 - INFO - subsample: 0.8633846851361612
+2025-01-03 15:49:00,644 - INFO - colsample_bytree: 0.8741708094337663
+2025-01-03 15:49:00,644 - INFO - gamma: 0.38582801320718396
+2025-01-03 15:49:00,644 - INFO - reg_alpha: 0.2053440441108917
+2025-01-03 15:49:00,644 - INFO - reg_lambda: 0.9402152886063047
+2025-01-03 15:49:00,644 - INFO - scale_pos_weight: 4
+2025-01-03 15:49:00,792 - INFO - Best XGBoost model trained with optimized hyperparameters.
+2025-01-03 15:49:00,792 - INFO - Evaluating model: GA Optimized XGBClassifier
+2025-01-03 15:49:00,812 - INFO - === GA Optimized XGBClassifier Evaluation ===
+2025-01-03 15:49:00,812 - INFO - Accuracy: 96.81%
+2025-01-03 15:49:00,812 - INFO - Precision: 14.29%
+2025-01-03 15:49:00,812 - INFO - Recall (Sensitivity): 62.50%
+2025-01-03 15:49:00,812 - INFO - F1-Score: 23.26%
+2025-01-03 15:49:00,812 - INFO - ROC-AUC: 0.96
+2025-01-03 15:49:00,814 - INFO - Confusion Matrix:
+2025-01-03 15:49:00,814 - INFO - 
+[[998  30]
+ [  3   5]]
+2025-01-03 15:49:00,823 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      0.97      0.98      1028
+           1       0.14      0.62      0.23         8
+
+    accuracy                           0.97      1036
+   macro avg       0.57      0.80      0.61      1036
+weighted avg       0.99      0.97      0.98      1036
+
+2025-01-03 15:49:16,723 - INFO - Trained model saved to best_xgb_model_pygad.pkl.
+2025-01-03 15:49:19,220 - INFO - Generating SHAP values for GA Optimized XGBClassifier...
+2025-01-03 15:49:21,903 - INFO - SHAP feature importance plot generated.
+2025-01-03 15:49:21,957 - INFO - === Model Performance Metrics ===
+2025-01-03 15:49:21,964 - INFO - 
+                  Accuracy  Precision  Recall  F1-Score   ROC-AUC
+GA Optimized XGB  0.968147   0.142857   0.625  0.232558  0.962305
+2025-01-03 16:07:26,299 - INFO - Loaded 27 fraudulent emitens.
+2025-01-03 16:07:27,594 - INFO - Data loaded successfully from C:\Users\User\OneDrive - UNIVERSITAS INDONESIA\Perkuliahan\Semester 9\Tesis\Data Processing\Data\fs_data_clean.xlsx. Shape: (3453, 44)
+2025-01-03 16:07:27,594 - INFO - Starting data preprocessing...
+2025-01-03 16:07:27,598 - INFO - Feature engineering completed: 'emiten' column created.
+2025-01-03 16:07:27,600 - INFO - Label encoding completed: 'emiten_label' column created.
+2025-01-03 16:07:27,600 - INFO - Dropped 31 unnecessary columns.
+2025-01-03 16:07:27,604 - INFO - Numeric columns: 14
+2025-01-03 16:07:27,614 - INFO - Non-numeric columns: 0
+2025-01-03 16:07:27,619 - INFO - Missing values imputed for numeric columns using median strategy.
+2025-01-03 16:07:27,629 - INFO - Class Distribution after encoding:
+emiten_label
+0    3426
+1      27
+Name: count, dtype: int64
+2025-01-03 16:07:27,629 - INFO - Data preprocessing completed.
+2025-01-03 16:07:27,633 - INFO - Train-Test split: Train=(2417, 14), Test=(1036, 14)
+2025-01-03 16:07:27,635 - INFO - Training Labels Distribution: Counter({0: 2398, 1: 19})
+2025-01-03 16:07:27,635 - INFO - Test Labels Distribution: Counter({0: 1028, 1: 8})
+2025-01-03 16:07:27,635 - INFO - Feature scaling completed using Min-Max Scaler.
+2025-01-03 16:07:27,635 - INFO - Resampling pipeline created with SMOTE and Random Under Sampling.
+2025-01-03 16:07:27,651 - INFO - After Resampling: Counter({0: 958, 1: 479})
+2025-01-03 16:07:27,651 - INFO - Starting hyperparameter tuning using Genetic Algorithm...
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,659 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,668 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,676 - INFO - Generation 1: Best Fitness = 0.0000
+2025-01-03 16:07:27,684 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,684 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,684 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,684 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,684 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,684 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,684 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,684 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,687 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,687 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,687 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,687 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,687 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,687 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,687 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,687 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,687 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,687 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,687 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,693 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,693 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,693 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,693 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,695 - INFO - Generation 2: Best Fitness = 0.0000
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,700 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,707 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,709 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,713 - INFO - Generation 3: Best Fitness = 0.0000
+2025-01-03 16:07:27,713 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,713 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,716 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,723 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,723 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,723 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,723 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,723 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,723 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - INFO - Generation 4: Best Fitness = 0.0000
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,725 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,733 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - INFO - Generation 5: Best Fitness = 0.0000
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,741 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - INFO - Generation 6: Best Fitness = 0.0000
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,749 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,757 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - INFO - Generation 7: Best Fitness = 0.0000
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,765 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,773 - INFO - Generation 8: Best Fitness = 0.0000
+2025-01-03 16:07:27,781 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,781 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,781 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,781 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,781 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,783 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,789 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,789 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,789 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,789 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,789 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,789 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,789 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,789 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,789 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,789 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - INFO - Generation 9: Best Fitness = 0.0000
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,792 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,797 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,806 - INFO - Generation 10: Best Fitness = 0.0000
+2025-01-03 16:07:27,806 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,806 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,806 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,806 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,806 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,806 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,806 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,806 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,806 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:27,806 - INFO - Best Solution: [0.013258370129336103 282 np.int64(7) 3 0.7664071264918284
+ np.float64(0.9536905893721237) 0.07086790647524442 0.4548921408558688
+ np.float64(0.09623711156382542) np.int64(1)]
+2025-01-03 16:07:27,806 - INFO - Best Solution Fitness (F1-Score): 0.0000
+2025-01-03 16:07:27,806 - INFO - Best Hyperparameters from GA:
+2025-01-03 16:07:27,806 - INFO - learning_rate: 0.013258370129336103
+2025-01-03 16:07:27,806 - INFO - n_estimators: 282
+2025-01-03 16:07:27,806 - INFO - max_depth: 7
+2025-01-03 16:07:27,806 - INFO - min_child_weight: 3
+2025-01-03 16:07:27,806 - INFO - subsample: 0.7664071264918284
+2025-01-03 16:07:27,806 - INFO - colsample_bytree: 0.9536905893721237
+2025-01-03 16:07:27,806 - INFO - gamma: 0.07086790647524442
+2025-01-03 16:07:27,806 - INFO - reg_alpha: 0.4548921408558688
+2025-01-03 16:07:27,806 - INFO - reg_lambda: 0.09623711156382542
+2025-01-03 16:07:27,806 - INFO - scale_pos_weight: 1
+2025-01-03 16:07:28,073 - INFO - Best XGBoost model trained with optimized hyperparameters.
+2025-01-03 16:07:28,074 - INFO - Evaluating model: GA Optimized XGBClassifier
+2025-01-03 16:07:28,096 - INFO - === GA Optimized XGBClassifier Evaluation ===
+2025-01-03 16:07:28,096 - INFO - Accuracy: 96.91%
+2025-01-03 16:07:28,096 - INFO - Precision: 12.50%
+2025-01-03 16:07:28,096 - INFO - Recall (Sensitivity): 50.00%
+2025-01-03 16:07:28,098 - INFO - F1-Score: 20.00%
+2025-01-03 16:07:28,098 - INFO - ROC-AUC: 0.95
+2025-01-03 16:07:28,098 - INFO - Confusion Matrix:
+2025-01-03 16:07:28,098 - INFO - 
+[[1000   28]
+ [   4    4]]
+2025-01-03 16:07:28,107 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      0.97      0.98      1028
+           1       0.12      0.50      0.20         8
+
+    accuracy                           0.97      1036
+   macro avg       0.56      0.74      0.59      1036
+weighted avg       0.99      0.97      0.98      1036
+
+2025-01-03 16:07:38,316 - INFO - Trained model saved to best_xgb_model_pygad.pkl.
+2025-01-03 16:07:40,113 - INFO - Generating SHAP values for GA Optimized XGBClassifier...
+2025-01-03 16:07:41,592 - INFO - SHAP feature importance plot generated.
+2025-01-03 16:07:41,647 - INFO - === Model Performance Metrics ===
+2025-01-03 16:07:41,655 - INFO - 
+                  Accuracy  Precision  Recall  F1-Score   ROC-AUC
+GA Optimized XGB  0.969112      0.125     0.5       0.2  0.948687
+2025-01-03 16:07:53,998 - INFO - Loaded 27 fraudulent emitens.
+2025-01-03 16:07:55,182 - INFO - Data loaded successfully from C:\Users\User\OneDrive - UNIVERSITAS INDONESIA\Perkuliahan\Semester 9\Tesis\Data Processing\Data\fs_data_clean.xlsx. Shape: (3453, 44)
+2025-01-03 16:07:55,182 - INFO - Starting data preprocessing...
+2025-01-03 16:07:55,182 - INFO - Feature engineering completed: 'emiten' column created.
+2025-01-03 16:07:55,192 - INFO - Label encoding completed: 'emiten_label' column created.
+2025-01-03 16:07:55,192 - INFO - Dropped 31 unnecessary columns.
+2025-01-03 16:07:55,192 - INFO - Numeric columns: 14
+2025-01-03 16:07:55,192 - INFO - Non-numeric columns: 0
+2025-01-03 16:07:55,198 - INFO - Missing values imputed for numeric columns using median strategy.
+2025-01-03 16:07:55,198 - INFO - Class Distribution after encoding:
+emiten_label
+0    3426
+1      27
+Name: count, dtype: int64
+2025-01-03 16:07:55,198 - INFO - Data preprocessing completed.
+2025-01-03 16:07:55,205 - INFO - Train-Test split: Train=(2417, 14), Test=(1036, 14)
+2025-01-03 16:07:55,207 - INFO - Training Labels Distribution: Counter({0: 2398, 1: 19})
+2025-01-03 16:07:55,207 - INFO - Test Labels Distribution: Counter({0: 1028, 1: 8})
+2025-01-03 16:07:55,207 - INFO - Feature scaling completed using Min-Max Scaler.
+2025-01-03 16:07:55,207 - INFO - Resampling pipeline created with SMOTE and Random Under Sampling.
+2025-01-03 16:07:55,226 - INFO - After Resampling: Counter({0: 958, 1: 479})
+2025-01-03 16:07:55,226 - INFO - Starting hyperparameter tuning using Genetic Algorithm...
+2025-01-03 16:07:55,226 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,226 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,231 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,239 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,247 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - INFO - Generation 1: Best Fitness = 0.0000
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,256 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,263 - INFO - Generation 2: Best Fitness = 0.0000
+2025-01-03 16:07:55,271 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,272 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - INFO - Generation 3: Best Fitness = 0.0000
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,279 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,287 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - INFO - Generation 4: Best Fitness = 0.0000
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,296 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,303 - INFO - Generation 5: Best Fitness = 0.0000
+2025-01-03 16:07:55,310 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,310 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,310 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,310 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,310 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,310 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,312 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - INFO - Generation 6: Best Fitness = 0.0000
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,320 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - INFO - Generation 7: Best Fitness = 0.0000
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,328 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,336 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - INFO - Generation 8: Best Fitness = 0.0000
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,344 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,352 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,355 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,355 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,356 - INFO - Generation 9: Best Fitness = 0.0000
+2025-01-03 16:07:55,356 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,356 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,356 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,356 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,356 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,356 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,360 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,368 - INFO - Generation 10: Best Fitness = 0.0000
+2025-01-03 16:07:55,368 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,368 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,368 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,368 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,368 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,368 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,368 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,368 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,368 - ERROR - Error in fitness function: name 'X_resampled' is not defined
+2025-01-03 16:07:55,368 - INFO - Best Solution: [0.07016067137305915 158 np.int64(3) np.int64(4) 0.8588011965987066
+ 0.8051299977116049 0.20035642561874778 0.740387422727508
+ 0.6643981919461565 2]
+2025-01-03 16:07:55,368 - INFO - Best Solution Fitness (F1-Score): 0.0000
+2025-01-03 16:07:55,368 - INFO - Best Hyperparameters from GA:
+2025-01-03 16:07:55,368 - INFO - learning_rate: 0.07016067137305915
+2025-01-03 16:07:55,368 - INFO - n_estimators: 158
+2025-01-03 16:07:55,368 - INFO - max_depth: 3
+2025-01-03 16:07:55,368 - INFO - min_child_weight: 4
+2025-01-03 16:07:55,368 - INFO - subsample: 0.8588011965987066
+2025-01-03 16:07:55,368 - INFO - colsample_bytree: 0.8051299977116049
+2025-01-03 16:07:55,368 - INFO - gamma: 0.20035642561874778
+2025-01-03 16:07:55,368 - INFO - reg_alpha: 0.740387422727508
+2025-01-03 16:07:55,368 - INFO - reg_lambda: 0.6643981919461565
+2025-01-03 16:07:55,368 - INFO - scale_pos_weight: 2
+2025-01-03 16:07:55,447 - INFO - Best XGBoost model trained with optimized hyperparameters.
+2025-01-03 16:07:55,447 - INFO - Evaluating model: GA Optimized XGBClassifier
+2025-01-03 16:07:55,464 - INFO - === GA Optimized XGBClassifier Evaluation ===
+2025-01-03 16:07:55,464 - INFO - Accuracy: 96.33%
+2025-01-03 16:07:55,464 - INFO - Precision: 14.29%
+2025-01-03 16:07:55,464 - INFO - Recall (Sensitivity): 75.00%
+2025-01-03 16:07:55,464 - INFO - F1-Score: 24.00%
+2025-01-03 16:07:55,466 - INFO - ROC-AUC: 0.95
+2025-01-03 16:07:55,466 - INFO - Confusion Matrix:
+2025-01-03 16:07:55,466 - INFO - 
+[[992  36]
+ [  2   6]]
+2025-01-03 16:07:55,474 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      0.96      0.98      1028
+           1       0.14      0.75      0.24         8
+
+    accuracy                           0.96      1036
+   macro avg       0.57      0.86      0.61      1036
+weighted avg       0.99      0.96      0.98      1036
+
+2025-01-03 16:08:04,662 - INFO - Trained model saved to best_xgb_model_pygad.pkl.
+2025-01-03 16:08:06,572 - INFO - Generating SHAP values for GA Optimized XGBClassifier...
+2025-01-03 16:08:08,252 - INFO - SHAP feature importance plot generated.
+2025-01-03 16:08:08,297 - INFO - === Model Performance Metrics ===
+2025-01-03 16:08:08,314 - INFO - 
+                  Accuracy  Precision  Recall  F1-Score   ROC-AUC
+GA Optimized XGB   0.96332   0.142857    0.75      0.24  0.951483
