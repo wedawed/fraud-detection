@@ -99,6 +99,8 @@ def preprocess_data(df, fraudulent_emitens):
 
     Returns:
     - pandas.DataFrame: Preprocessed dataset ready for modeling.
+    - SimpleImputer: Fitted imputer object for numerical features.
+    - OneHotEncoder: Fitted encoder object for categorical features (or None if no categorical features).
     """
     logging.info("Starting data preprocessing...")
 
@@ -163,6 +165,9 @@ def preprocess_data(df, fraudulent_emitens):
         encoded_non_numeric.columns = encoder.get_feature_names_out(non_numeric_cols)
         df_numeric = pd.concat([df_numeric, encoded_non_numeric], axis=1)
         logging.info("Non-numeric columns encoded using One-Hot Encoding.")
+    else:
+        logging.info("No non-numeric columns to encode.")
+        encoder = None  # If no categorical features, set encoder to None
 
     # Combine features
     df_final = df_numeric.copy()
@@ -174,8 +179,14 @@ def preprocess_data(df, fraudulent_emitens):
     class_counts = df_final['emiten_label'].value_counts()
     logging.info(f"Class Distribution after encoding:\n{class_counts}")
 
+    # Additional Debugging Logs
+    logging.info(f"Columns after label encoding and before returning: {df_final.columns.tolist()}")
+
     logging.info("Data preprocessing completed.")
-    return df_final
+
+    # Return the processed DataFrame and the fitted preprocessors
+    return df_final, imputer, encoder
+
 
 def split_data(df, test_size=0.3, random_state=42):
     """
@@ -222,7 +233,9 @@ def scale_features(X_train, X_test):
     - X_test (pandas.DataFrame): Testing features.
 
     Returns:
-    - tuple: Scaled X_train, Scaled X_test
+    - scaler (MinMaxScaler): Fitted scaler object.
+    - X_train_scaled (pandas.DataFrame): Scaled training data.
+    - X_test_scaled (pandas.DataFrame): Scaled testing data.
     """
     scaler = MinMaxScaler()
     X_train_scaled = scaler.fit_transform(X_train)
@@ -230,7 +243,7 @@ def scale_features(X_train, X_test):
     X_train_scaled = pd.DataFrame(X_train_scaled, columns=X_train.columns, index=X_train.index)
     X_test_scaled = pd.DataFrame(X_test_scaled, columns=X_test.columns, index=X_test.index)
     logging.info("Feature scaling completed using Min-Max Scaler.")
-    return X_train_scaled, X_test_scaled
+    return scaler, X_train_scaled, X_test_scaled
 
 def evaluate_model(model, X_test, y_test, model_name="Model"):
     """
@@ -398,6 +411,37 @@ def fitness_func(ga_instance, solution, solution_idx):
     except Exception as e:
         logging.error(f"Error in fitness function: {e}")
         return 0  # Assign a minimal fitness score in case of error
+    
+def save_objects(imputer, encoder, scaler, model, paths):
+    """
+    Save the imputer, encoder, scaler, and model to disk.
+
+    Parameters:
+    - imputer: Fitted imputer object.
+    - encoder: Fitted OneHotEncoder object.
+    - scaler: Fitted scaler object.
+    - model: Trained machine learning model.
+    - paths (dict): Dictionary with keys 'imputer', 'encoder', 'scaler', 'model' and their respective paths.
+    """
+    try:
+        joblib.dump(imputer, paths['imputer'])
+        logging.info(f"Imputer saved to {paths['imputer']}.")
+
+        if encoder is not None:
+            joblib.dump(encoder, paths['encoder'])
+            logging.info(f"OneHotEncoder saved to {paths['encoder']}.")
+        else:
+            logging.info("No OneHotEncoder to save.")
+
+        joblib.dump(scaler, paths['scaler'])
+        logging.info(f"Scaler saved to {paths['scaler']}.")
+
+        joblib.dump(model, paths['model'])
+        logging.info(f"Trained model saved to {paths['model']}.")
+    except Exception as e:
+        logging.error(f"Error saving objects: {e}")
+        raise
+
 
 def perform_hyperparameter_tuning(X, y):
     """
@@ -491,13 +535,13 @@ def main():
     fs_data = load_data(data_path)
 
     # Preprocess Data
-    df_processed = preprocess_data(fs_data, fraudulent_emitens)
+    df_processed, imputer, encoder = preprocess_data(fs_data, fraudulent_emitens)
 
     # Split Data
     X_train, X_test, y_train, y_test = split_data(df_processed, test_size=0.3, random_state=42)
 
-    # Scale Features
-    X_train_scaled, X_test_scaled = scale_features(X_train, X_test)
+    # Scale Features using the scale_features function
+    scaler, X_train_scaled, X_test_scaled = scale_features(X_train, X_test)
 
     # Handle Class Imbalance
     resampling_pipeline = build_resampling_pipeline()
@@ -517,6 +561,15 @@ def main():
     )
     best_model.fit(X_resampled, y_resampled)
     logging.info("Best XGBoost model trained with optimized hyperparameters.")
+
+    # Save Preprocessors and Model
+    paths = {
+        'imputer': Path("imputer.pkl"),
+        'encoder': Path("onehot_encoder.pkl"),
+        'scaler': Path("scaler.pkl"),
+        'model': Path("best_xgb_model_pygad.pkl")
+    }
+    save_objects(imputer, encoder, scaler, best_model, paths)
 
     # Evaluate the Model
     evaluate_model(best_model, X_test_scaled, y_test, model_name="GA Optimized XGBClassifier")
@@ -541,27 +594,6 @@ def main():
         model_name="GA Optimized XGBClassifier",
         sample_size=100
     )
-
-    # Collect and Display Metrics
-    metrics = {
-        'Accuracy': accuracy_score(y_test, best_model.predict(X_test_scaled)),
-        'Precision': precision_score(y_test, best_model.predict(X_test_scaled), zero_division=0),
-        'Recall': recall_score(y_test, best_model.predict(X_test_scaled), zero_division=0),
-        'F1-Score': f1_score(y_test, best_model.predict(X_test_scaled), zero_division=0),
-        'ROC-AUC': roc_auc_score(y_test, best_model.predict_proba(X_test_scaled)[:, 1])
-    }
-
-    eval_df = pd.DataFrame([metrics], index=['GA Optimized XGB'])
-    logging.info("=== Model Performance Metrics ===")
-    logging.info(f"\n{eval_df}")
-
-    # Visualize Metrics
-    eval_df.plot(kind='bar', figsize=(10, 6), ylim=(0, 1), legend=False, color='#1f77b4')
-    plt.title('Model Performance Metrics')
-    plt.ylabel('Score')
-    plt.xticks(rotation=0)
-    plt.tight_layout()
-    plt.show()
 
 if __name__ == "__main__":
     main()
