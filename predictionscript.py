@@ -1,3 +1,5 @@
+# fraud_detection_inference.py
+
 import joblib
 import pandas as pd
 import logging
@@ -15,21 +17,39 @@ logging.basicConfig(
 def load_objects(imputer_path, encoder_path, scaler_path, model_path):
     """
     Load the saved imputer, encoder, scaler, and model.
+
+    Parameters:
+    - imputer_path (Path): Path to the saved imputer.
+    - encoder_path (Path): Path to the saved encoder.
+    - scaler_path (Path): Path to the saved scaler.
+    - model_path (Path): Path to the saved model.
+
+    Returns:
+    - tuple: imputer, encoder (or None), scaler, model
     """
     try:
+        # Load Imputer
         imputer = joblib.load(imputer_path)
         logging.info(f"Loaded imputer from {imputer_path}.")
 
-        encoder = joblib.load(encoder_path)
-        logging.info(f"Loaded OneHotEncoder from {encoder_path}.")
+        # Load Encoder if it exists
+        if encoder_path.exists():
+            encoder = joblib.load(encoder_path)
+            logging.info(f"Loaded OneHotEncoder from {encoder_path}.")
+        else:
+            encoder = None
+            logging.info("OneHotEncoder not found. Proceeding without encoder.")
 
+        # Load Scaler
         scaler = joblib.load(scaler_path)
         logging.info(f"Loaded scaler from {scaler_path}.")
 
+        # Load Model
         model = joblib.load(model_path)
         logging.info(f"Loaded model from {model_path}.")
 
         return imputer, encoder, scaler, model
+
     except FileNotFoundError as e:
         logging.error(f"File not found: {e}")
         raise
@@ -57,6 +77,15 @@ def get_user_input(feature_names):
 def preprocess_input(user_input, imputer, encoder, scaler):
     """
     Preprocess the user input data.
+
+    Parameters:
+    - user_input (dict): Dictionary of user-provided feature values.
+    - imputer (SimpleImputer): Fitted imputer object.
+    - encoder (OneHotEncoder or None): Fitted encoder object.
+    - scaler (MinMaxScaler): Fitted scaler object.
+
+    Returns:
+    - pandas.DataFrame: Preprocessed and scaled input data.
     """
     # Convert to DataFrame
     input_df = pd.DataFrame([user_input])
@@ -69,17 +98,17 @@ def preprocess_input(user_input, imputer, encoder, scaler):
     input_numeric_imputed = pd.DataFrame(imputer.transform(input_numeric), columns=input_numeric.columns)
     logging.info("Missing values imputed for numerical features.")
 
-    # Encode categorical variables
+    # Encode categorical variables if encoder exists
     if not input_non_numeric.empty and encoder is not None:
         input_encoded = pd.DataFrame(encoder.transform(input_non_numeric))
         input_encoded.columns = encoder.get_feature_names_out(input_non_numeric.columns)
         logging.info("Categorical features encoded using One-Hot Encoding.")
+    elif not input_non_numeric.empty and encoder is None:
+        logging.warning("Categorical features present but encoder was not saved. Categorical features will be ignored.")
+        input_encoded = pd.DataFrame()
     else:
         input_encoded = pd.DataFrame()
-        if input_non_numeric.empty:
-            logging.info("No non-numeric features to encode.")
-        else:
-            logging.warning("Encoder is None, but non-numeric features are present.")
+        logging.info("No non-numeric features to encode.")
 
     # Combine numerical and encoded categorical features
     input_processed = pd.concat([input_numeric_imputed, input_encoded], axis=1)
@@ -127,9 +156,10 @@ def main_inference():
     # Define feature names as per training data
     # Replace with your actual feature names used during training
     feature_names = [
-        "feature1", "feature2", "feature3",
-        "categorical_feature1", "categorical_feature2"
-        # Add all necessary features
+        "jumlah_laba_komprehensif", "per", "roa", "roe",
+        "net_profit_margin", "opm", "eps", "book_value", 
+        "pbv", "aset_idr", "liabilitas_idr", "ekuitas_idr", 
+        "total_pendapatan_idr", "der"
     ]
 
     # Get user input
