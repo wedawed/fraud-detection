@@ -1,14 +1,15 @@
-# app.py
+# streamlit_fraud.py
 
 import streamlit as st
 import joblib
 import pandas as pd
-import numpy as np
 import logging
 from pathlib import Path
-from feature_config import FEATURE_TYPES  # Ensure this file exists with correct mappings
+from feature_config import FEATURE_TYPES
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-# Configure Logging (Optional)
+# Configure Logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -22,7 +23,7 @@ def load_objects(imputer_path, encoder_path, scaler_path, model_path):
         # Load Imputer
         imputer = joblib.load(imputer_path)
         logging.info(f"Loaded imputer from {imputer_path}.")
-        
+
         # Load Encoder if it exists
         if encoder_path.exists():
             encoder = joblib.load(encoder_path)
@@ -30,17 +31,17 @@ def load_objects(imputer_path, encoder_path, scaler_path, model_path):
         else:
             encoder = None
             logging.info("OneHotEncoder not found. Proceeding without encoder.")
-        
+
         # Load Scaler
         scaler = joblib.load(scaler_path)
         logging.info(f"Loaded scaler from {scaler_path}.")
-        
+
         # Load Model
         model = joblib.load(model_path)
         logging.info(f"Loaded model from {model_path}.")
-        
+
         return imputer, encoder, scaler, model
-    
+
     except FileNotFoundError as e:
         logging.error(f"File not found: {e}")
         st.error(f"File not found: {e}")
@@ -57,14 +58,14 @@ def preprocess_input(user_input, imputer, encoder, scaler):
     # Convert to DataFrame
     input_df = pd.DataFrame([user_input])
     logging.info(f"User input DataFrame:\n{input_df}")
-    
+
     # Handle missing values
     input_numeric = input_df.select_dtypes(include=["float64", "int64"])
     input_non_numeric = input_df.select_dtypes(exclude=["float64", "int64"])
-    
+
     input_numeric_imputed = pd.DataFrame(imputer.transform(input_numeric), columns=input_numeric.columns)
     logging.info("Missing values imputed for numerical features.")
-    
+
     # Encode categorical variables if encoder exists
     if not input_non_numeric.empty and encoder is not None:
         input_encoded = pd.DataFrame(encoder.transform(input_non_numeric))
@@ -76,16 +77,59 @@ def preprocess_input(user_input, imputer, encoder, scaler):
     else:
         input_encoded = pd.DataFrame()
         logging.info("No non-numeric features to encode.")
-    
+
     # Combine numerical and encoded categorical features
     input_processed = pd.concat([input_numeric_imputed, input_encoded], axis=1)
     logging.info(f"Combined processed features:\n{input_processed}")
-    
+
     # Scale features
     input_scaled = pd.DataFrame(scaler.transform(input_processed), columns=input_processed.columns)
     logging.info("Features scaled using Min-Max Scaler.")
-    
+
     return input_scaled
+
+def get_feature_importance(model, feature_names, top_n=10):
+    """
+    Extracts feature importance from the XGBoost model.
+
+    Parameters:
+    - model: Trained XGBoost model.
+    - feature_names (list): List of feature names.
+
+    Returns:
+    - DataFrame: Feature importance sorted in descending order.
+    """
+    importance = model.get_booster().get_score(importance_type='gain')
+    importance_df = pd.DataFrame({
+        'feature': list(importance.keys()),
+        'importance': list(importance.values())
+    })
+    importance_df = importance_df.sort_values(by='importance', ascending=False)
+    return importance_df
+
+def plot_feature_importance(importance_df, top_n=10):
+    """
+    Plots the top_n feature importances.
+
+    Parameters:
+    - importance_df (DataFrame): DataFrame containing feature importance.
+    - top_n (int): Number of top features to display.
+
+    Returns:
+    - Matplotlib Figure: The generated plot.
+    """
+    plt.figure(figsize=(10, 6))
+    sns.barplot(
+        x='importance',
+        y='feature',
+        data=importance_df.head(top_n),
+        palette='viridis'
+    )
+    plt.title(f'Top {top_n} Feature Importances')
+    plt.xlabel('Importance (Gain)')
+    plt.ylabel('Feature')
+    plt.tight_layout()
+    return plt
 
 def predict(model, preprocessed_data, model_features):
     """
@@ -96,60 +140,64 @@ def predict(model, preprocessed_data, model_features):
     for col in missing_cols:
         preprocessed_data[col] = 0
         logging.info(f"Added missing column '{col}' with default value 0.")
-    
+
     # Reorder columns to match training data
     preprocessed_data = preprocessed_data[model_features]
     logging.info("Reordered preprocessed data columns to match model's expected features.")
-    
+
     # Predict
     prediction = model.predict(preprocessed_data)[0]
     prediction_proba = model.predict_proba(preprocessed_data)[0, 1]
-    
+
     return prediction, prediction_proba
 
 def main():
     st.title("📈 Fraud Detection Prediction")
     st.write("Enter the required feature values below to predict whether the data is **FRAUDULENT** or **NON-FRAUDULENT**.")
-    
+
     # Define paths to saved objects
     imputer_path = Path("imputer.pkl")
     encoder_path = Path("onehot_encoder.pkl")
     scaler_path = Path("scaler.pkl")
     model_path = Path("best_xgb_model_pygad.pkl")
-    
+
     # Load preprocessors and model
     imputer, encoder, scaler, model = load_objects(imputer_path, encoder_path, scaler_path, model_path)
-    
+
     if not all([imputer, scaler, model]):
         st.error("Failed to load necessary components. Please check the logs for more details.")
         return
-    
+
     # Initialize a dictionary to store user inputs
     user_input = {}
-    
+
     st.header("🔍 Input Features")
-    
+
     # Iterate over features and create input widgets based on feature type
     for feature, f_type in FEATURE_TYPES.items():
         if f_type == "numerical":
-            # Use number_input for numerical features
             user_input[feature] = st.text_input(
                 f"{feature} (Numerical)",
                 value="",
                 help="Enter a numerical value using a dot `.` as the decimal separator (e.g., 12.34)."
             )
         elif f_type == "categorical":
-            # You can define the possible categories or allow free text
-            # For demonstration, let's assume categories are predefined
-            # You might need to extract categories from the encoder if available
             if encoder is not None:
-                # Extract categories from encoder
-                categories = encoder.categories_[FEATURE_TYPES.keys().index(feature)]
-                user_input[feature] = st.selectbox(
-                    f"{feature} (Categorical)",
-                    options=categories,
-                    help="Select the appropriate category."
-                )
+                try:
+                    feature_index = list(FEATURE_TYPES.keys()).index(feature)
+                    categories = encoder.categories_[feature_index]
+                    user_input[feature] = st.selectbox(
+                        f"{feature} (Categorical)",
+                        options=categories,
+                        help="Select the appropriate category."
+                    )
+                except IndexError:
+                    # If feature index is out of range
+                    user_input[feature] = st.text_input(
+                        f"{feature} (Categorical)",
+                        value="",
+                        help="Enter the category as used during training."
+                    )
             else:
                 # If encoder is None, allow free text input
                 user_input[feature] = st.text_input(
@@ -160,7 +208,7 @@ def main():
         else:
             # Handle other types if any
             user_input[feature] = st.text_input(f"{feature}", value="")
-    
+
     # Button to trigger prediction
     if st.button("🔮 Predict"):
         try:
@@ -182,31 +230,40 @@ def main():
                 else:
                     # Handle other types if necessary
                     processed_input[feature] = value
-            
+
             # Preprocess input
             preprocessed_data = preprocess_input(processed_input, imputer, encoder, scaler)
-            
+
             # Retrieve feature names from the model
             try:
                 model_features = model.get_booster().feature_names
             except AttributeError:
                 # For scikit-learn API
                 model_features = model.feature_names_in_
-            
+
             # Make prediction
             prediction, prediction_proba = predict(model, preprocessed_data, model_features)
-            
+
             # Display result
             if prediction == 1:
-                st.success(f"The input data is classified as **FRAUDULENT** with a probability of {prediction_proba:.2f}.")
+                st.success(f"The input data is classified as **FRAUDULENT** with a probability of {prediction_proba:.2%}.")
             else:
-                st.info(f"The input data is classified as **NON-FRAUDULENT** with a probability of {1 - prediction_proba:.2f}.")
-        
+                st.info(f"The input data is classified as **NON-FRAUDULENT** with a probability of {1 - prediction_proba:.2%}.")
+
+            # Display Feature Importance
+            st.header("📊 Feature Importance")
+            importance_df = get_feature_importance(model, model_features, top_n=10)
+            fig = plot_feature_importance(importance_df, top_n=10)
+            st.pyplot(fig)
+
         except ValueError as ve:
             st.error(f"Input Error: {ve}")
         except Exception as e:
             logging.error(f"An error occurred during prediction: {e}")
             st.error(f"An unexpected error occurred: {e}")
+
+    # Optional: Display FEATURE_TYPES for debugging
+    # st.write("Feature Types:", FEATURE_TYPES)
 
 if __name__ == "__main__":
     main()
