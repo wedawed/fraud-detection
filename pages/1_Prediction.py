@@ -8,6 +8,7 @@ from pathlib import Path
 from feature_config import FEATURE_TYPES
 import matplotlib.pyplot as plt
 import seaborn as sns
+from utils.auth import render_sidebar
 
 # Configure Logging
 logging.basicConfig(
@@ -118,16 +119,38 @@ def plot_feature_importance(importance_df, top_n=10):
     Returns:
     - Matplotlib Figure: The generated plot.
     """
-    plt.figure(figsize=(10, 6))
-    sns.barplot(
+    # Detect current Streamlit theme
+    theme = st.get_option("theme.base")
+    if theme == "dark":
+        background_color = '#2E2E2E'  # Dark gray
+        text_color = 'white'
+        grid_color = 'gray'
+        sns.set_style("darkgrid")
+    else:
+        background_color = 'white'
+        text_color = 'black'
+        grid_color = 'lightgray'
+        sns.set_style("whitegrid")
+
+    # Create the plot
+    plt.figure(figsize=(10, 6), facecolor=background_color)
+    barplot = sns.barplot(
         x='importance',
         y='feature',
         data=importance_df.head(top_n),
         palette='viridis'
     )
-    plt.title(f'Top {top_n} Feature Importances')
-    plt.xlabel('Importance (Gain)')
-    plt.ylabel('Feature')
+    plt.title(f'Top {top_n} Feature Importances', color=text_color, fontsize=16)
+    plt.xlabel('Importance (Gain)', color=text_color, fontsize=14)
+    plt.ylabel('Feature', color=text_color, fontsize=14)
+
+    # Adjust tick parameters
+    plt.tick_params(axis='both', colors=text_color)
+
+    # Set spines colors
+    for spine in plt.gca().spines.values():
+        spine.set_edgecolor(text_color)
+
     plt.tight_layout()
     return plt
 
@@ -152,6 +175,14 @@ def predict(model, preprocessed_data, model_features):
     return prediction, prediction_proba
 
 def main():
+    # Check if user is authenticated
+    if not st.session_state.get('authenticated'):
+        st.error("⚠️ **Access Denied**: Please log in to access this page.")
+        st.stop()
+    
+    # Render sidebar
+    render_sidebar()
+
     st.title("📈 Fraud Detection Prediction")
     st.write("Enter the required feature values below to predict whether the data is **FRAUDULENT** or **NON-FRAUDULENT**.")
 
@@ -176,10 +207,11 @@ def main():
     # Iterate over features and create input widgets based on feature type
     for feature, f_type in FEATURE_TYPES.items():
         if f_type == "numerical":
-            user_input[feature] = st.text_input(
+            user_input[feature] = st.number_input(
                 f"{feature} (Numerical)",
-                value="",
-                help="Enter a numerical value using a dot `.` as the decimal separator (e.g., 12.34)."
+                value=0.0,
+                format="%.2f",
+                help="Enter a numerical value."
             )
         elif f_type == "categorical":
             if encoder is not None:
@@ -216,19 +248,10 @@ def main():
             processed_input = {}
             for feature, value in user_input.items():
                 if FEATURE_TYPES[feature] == "numerical":
-                    if value == "":
-                        st.error(f"Please enter a value for {feature}.")
-                        raise ValueError(f"Missing input for {feature}.")
-                    # Replace comma with dot and convert to float
-                    corrected_value = value.replace(',', '.')
-                    processed_input[feature] = float(corrected_value)
+                    processed_input[feature] = float(value)
                 elif FEATURE_TYPES[feature] == "categorical":
-                    if value == "":
-                        st.error(f"Please select a category for {feature}.")
-                        raise ValueError(f"Missing input for {feature}.")
                     processed_input[feature] = value
                 else:
-                    # Handle other types if necessary
                     processed_input[feature] = value
 
             # Preprocess input
@@ -261,9 +284,6 @@ def main():
         except Exception as e:
             logging.error(f"An error occurred during prediction: {e}")
             st.error(f"An unexpected error occurred: {e}")
-
-    # Optional: Display FEATURE_TYPES for debugging
-    # st.write("Feature Types:", FEATURE_TYPES)
 
 if __name__ == "__main__":
     main()
