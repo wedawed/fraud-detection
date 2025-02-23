@@ -73,5 +73,11 @@ def render_sidebar():
     if st.session_state['authenticated']:
         st.sidebar.title("Fraud Detection App")
         st.sidebar.write(f"👤 **{get_user_fullname(st.session_state['username'])}**")
+        # Dictionary of pages and their icons
+        pages = {
+         "Home": "🏠",
+         "Prediction": "🔍",
+         "About": "ℹ️"
+        }
         if st.sidebar.button("🔓 Logout"):
             logout()

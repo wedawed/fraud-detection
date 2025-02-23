@@ -365,52 +365,6 @@ def shap_feature_importance(model, X, model_name="Model", sample_size=100):
         logging.info("SHAP feature importance plot generated.")
     except Exception as e:
         logging.error(f"An error occurred during SHAP feature importance plotting: {e}")
-
-def fitness_func(ga_instance, solution, solution_idx):
-    """
-    Fitness function for the Genetic Algorithm to evaluate XGBoost hyperparameters.
-
-    Parameters:
-    - ga_instance: Instance of the pygad.GA class.
-    - solution (list): List of hyperparameter values.
-    - solution_idx (int): Index of the solution.
-
-    Returns:
-    - float: Fitness score (mean F1-Score from cross-validation).
-    """
-    try:
-        # Decode the solution to hyperparameters
-        hyperparams = {
-            'learning_rate': solution[0],
-            'n_estimators': int(solution[1]),
-            'max_depth': int(solution[2]),
-            'min_child_weight': int(solution[3]),
-            'subsample': solution[4],
-            'colsample_bytree': solution[5],
-            'gamma': solution[6],
-            'reg_alpha': solution[7],
-            'reg_lambda': solution[8],
-            'scale_pos_weight': int(solution[9])
-        }
-
-        # Initialize the XGBoost classifier with the given hyperparameters
-        model = XGBClassifier(
-            objective='binary:logistic',
-            use_label_encoder=False,
-            eval_metric='logloss',
-            random_state=42,
-            **hyperparams
-        )
-
-        # Perform cross-validation
-        cv = StratifiedKFold(n_splits=3, shuffle=True, random_state=42)
-        scores = cross_val_score(model, X_resampled, y_resampled, cv=cv, scoring='f1')
-
-        # The fitness function is the mean F1-Score
-        return scores.mean()
-    except Exception as e:
-        logging.error(f"Error in fitness function: {e}")
-        return 0  # Assign a minimal fitness score in case of error
     
 def save_objects(imputer, encoder, scaler, model, paths):
     """
@@ -458,38 +412,84 @@ def perform_hyperparameter_tuning(X, y):
 
     # Define gene space for each hyperparameter
     gene_space = [
-        {'low': 0.01, 'high': 0.2},     # learning_rate (float)
-        {'low': 100, 'high': 500, 'step': 1},      # n_estimators (int)
-        {'low': 3, 'high': 8, 'step': 1},          # max_depth (int)
-        {'low': 1, 'high': 5, 'step': 1},          # min_child_weight (int)
-        {'low': 0.6, 'high': 1.0},      # subsample (float)
-        {'low': 0.6, 'high': 1.0},      # colsample_bytree (float)
-        {'low': 0, 'high': 0.4},        # gamma (float)
-        {'low': 0, 'high': 1.0},        # reg_alpha (float)
-        {'low': 0, 'high': 1.0},        # reg_lambda (float)
-        {'low': 1, 'high': 5, 'step':1}           # scale_pos_weight (int)
+        {'low': 0.01, 'high': 0.2},                     # learning_rate (float)
+        {'low': 100, 'high': 500, 'step': 1},           # n_estimators (int)
+        {'low': 3, 'high': 8, 'step': 1},               # max_depth (int)
+        {'low': 1, 'high': 5, 'step': 1},               # min_child_weight (int)
+        {'low': 0.6, 'high': 1.0},                      # subsample (float)
+        {'low': 0.6, 'high': 1.0},                      # colsample_bytree (float)
+        {'low': 0, 'high': 0.4},                        # gamma (float)
+        {'low': 0, 'high': 1.0},                        # reg_alpha (float)
+        {'low': 0, 'high': 1.0},                        # reg_lambda (float)
+        {'low': 1, 'high': 5, 'step': 1}                # scale_pos_weight (int)
     ]
+
+    def fitness_func(ga_instance, solution, solution_idx):
+        """
+        Fitness function for the Genetic Algorithm to evaluate XGBoost hyperparameters.
+
+        Parameters:
+        - ga_instance: Instance of the pygad.GA class.
+        - solution (list): List of hyperparameter values.
+        - solution_idx (int): Index of the solution.
+
+        Returns:
+        - float: Fitness score (mean F1-Score from cross-validation).
+        """
+        try:
+            # Decode the solution to hyperparameters
+            hyperparams = {
+                'learning_rate': solution[0],
+                'n_estimators': int(solution[1]),
+                'max_depth': int(solution[2]),
+                'min_child_weight': int(solution[3]),
+                'subsample': solution[4],
+                'colsample_bytree': solution[5],
+                'gamma': solution[6],
+                'reg_alpha': solution[7],
+                'reg_lambda': solution[8],
+                'scale_pos_weight': int(solution[9])
+            }
+
+            # Initialize the XGBoost classifier with the given hyperparameters
+            model = XGBClassifier(
+                objective='binary:logistic',
+                use_label_encoder=False,
+                eval_metric='logloss',
+                random_state=42,
+                **hyperparams
+            )
+
+            # Perform cross-validation
+            cv = StratifiedKFold(n_splits=3, shuffle=True, random_state=42)
+            scores = cross_val_score(model, X, y, cv=cv, scoring='f1')
+
+            # The fitness function is the mean F1-Score
+            return scores.mean()
+        except Exception as e:
+            logging.error(f"Error in fitness function: {e}")
+            return 0  # Assign a minimal fitness score in case of error
 
     # Initialize the GA instance
     ga_instance = pygad.GA(
-        num_generations=50,              # Number of generations
-        num_parents_mating=10,           # Number of parents to mate
+        num_generations=50,               # Number of generations
+        num_parents_mating=10,            # Number of parents to mate
         fitness_func=fitness_func,        # Fitness function
-        sol_per_pop=20,                   # Population size
-        num_genes=10,                     # Number of hyperparameters
-        gene_space=gene_space,            # Gene space
+        sol_per_pop=20,                    # Population size
+        num_genes=10,                      # Number of hyperparameters
+        gene_space=gene_space,             # Gene space
         gene_type=[float, int, int, int, float, float, float, float, float, int],
-        mutation_percent_genes=10,        # Percentage of genes to mutate
-        crossover_type="uniform",         # Crossover type
-        mutation_type="random",           # Mutation type
-        random_mutation_min_val=-0.1,     # Min mutation value
-        random_mutation_max_val=0.1,      # Max mutation value
+        mutation_percent_genes=10,         # Percentage of genes to mutate
+        crossover_type="uniform",          # Crossover type
+        mutation_type="random",            # Mutation type
+        random_mutation_min_val=-0.1,      # Min mutation value
+        random_mutation_max_val=0.1,       # Max mutation value
         on_generation=lambda ga: logging.info(
             f"Generation {ga.generations_completed}: Best Fitness = {ga.best_solution()[1]:.4f}"
         ),
-        parallel_processing=cpu_count(),  # Enable parallel processing
-        suppress_warnings=True,           # Suppress warnings
-        stop_criteria=["saturate_10"]     # Stop if no improvement over 10 generations
+        parallel_processing=cpu_count(),   # Enable parallel processing
+        suppress_warnings=True,            # Suppress warnings
+        stop_criteria=["saturate_10"]      # Stop if no improvement over 10 generations
     )
 
     # Run the GA
@@ -519,6 +519,7 @@ def perform_hyperparameter_tuning(X, y):
         logging.info(f"{param}: {value}")
 
     return best_hyperparams
+
 
 def main():
     """

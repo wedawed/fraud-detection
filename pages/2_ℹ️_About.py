@@ -11,7 +11,7 @@ def main():
     
     # Render sidebar
     render_sidebar()
-    
+
     st.title("ℹ️ About This App")
     
     st.markdown("""
@@ -27,7 +27,7 @@ def main():
     - **Algorithm:** The prediction is powered by an **XGBoost** classifier, renowned for its performance and efficiency in handling structured data.
     - **Training Data:** The model was trained on a comprehensive dataset comprising numerous financial features related to profitability, liquidity, and leverage.
     - **Performance Metrics:**
-        - **Accuracy:** 95%
+        - **Accuracy:** 96%
         - **Precision:** 93%
         - **Recall:** 90%
         - **F1-Score:** 91.5%
@@ -46,11 +46,11 @@ def main():
     4. **Understand Insights:** View the Feature Importance graph to see which metrics influenced the prediction the most.
     
     ### **👤 About the Developer**
-    - **Name:** Jane Doe
-    - **Position:** Data Scientist at XYZ Financial Services
-    - **Contact:** [jane.doe@example.com](mailto:jane.doe@example.com)
-    - **LinkedIn:** [linkedin.com/in/janedoe](https://linkedin.com/in/janedoe)
-    - **GitHub:** [github.com/janedoe](https://github.com/janedoe)
+    - **Name:** Dewa Ferrouzi
+    - **Position:** Laboratory Assistant at SQE Laboratory
+    - **Contact:** [dewa.ferrouzi41@ui.ac.id](https://mail.google.com/mail/?view=cm&fs=1&to=dewa.ferrouzi41@ui.ac.id)
+    - **LinkedIn:** [linkedin.com/in/dewaferrouzi](https://linkedin.com/in/dewaferrouzi)
+    - **GitHub:** [github.com/wedawed](https://github.com/wedawed)
     
     ### **🔒 Security and Privacy**
     - All user inputs are handled securely, and no sensitive data is stored.
@@ -66,7 +66,7 @@ def main():
     
     ### **📢 Feedback and Contributions**
     - We welcome feedback to improve the app's functionality and accuracy.
-    - Interested in contributing? Visit our [GitHub Repository](https://github.com/janedoe/fraud-detection-app) to get started.
+    - Interested in contributing? Visit our [GitHub Repository](https://github.com/wedawed/fraud-detection) to get started.
     """)
 
 if __name__ == "__main__":

@@ -1,7 +1,9 @@
 # main.py
 
 import streamlit as st
-from utils.auth import authenticate, get_user_fullname, render_sidebar
+from utils.auth import authenticate, get_user_fullname, render_sidebar, logout
+import sys
+import importlib
 
 def main():
     st.set_page_config(page_title="Fraud Detection App", layout="wide")
@@ -26,7 +28,7 @@ def main():
                 st.session_state['authenticated'] = True
                 st.session_state['username'] = username
                 st.success("✅ Logged in successfully!")
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("❌ Invalid username or password. Please try again.")
     else:
