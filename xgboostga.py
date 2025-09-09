@@ -313,6 +313,148 @@ def evaluate_model(model, X_test, y_test, model_name="Model"):
     plt.legend(loc='lower left')
     plt.show()
 
+def evaluate_model_with_cv(model, X, y, model_name="Model", n_splits=5):
+    """
+    Evaluate the model using stratified k-fold cross-validation with detailed confusion matrices
+    """
+    logging.info(f"Evaluating model with {n_splits}-fold cross-validation: {model_name}")
+    
+    # Initialize StratifiedKFold
+    skf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=42)
+    
+    # Initialize arrays to store metrics
+    metrics = {
+        'accuracy': [], 'precision': [], 'recall': [], 
+        'f1': [], 'roc_auc': [], 'pr_auc': []
+    }
+    
+    # Create a figure for all confusion matrices
+    n_rows = (n_splits + 1) // 2
+    fig, axes = plt.subplots(n_rows, 2, figsize=(15, 5*n_rows))
+    axes = axes.ravel() if n_splits > 1 else [axes]
+    
+    # Perform cross-validation
+    fold_num = 1
+    for train_idx, val_idx in skf.split(X, y):
+        # Split data
+        X_fold_train, X_fold_val = X.iloc[train_idx], X.iloc[val_idx]
+        y_fold_train, y_fold_val = y.iloc[train_idx], y.iloc[val_idx]
+        
+        # Train model on this fold
+        model.fit(X_fold_train, y_fold_train)
+        
+        # Get predictions
+        y_pred = model.predict(X_fold_val)
+        y_pred_proba = model.predict_proba(X_fold_val)[:, 1]
+        
+        # Calculate metrics
+        metrics['accuracy'].append(accuracy_score(y_fold_val, y_pred))
+        metrics['precision'].append(precision_score(y_fold_val, y_pred, zero_division=0))
+        metrics['recall'].append(recall_score(y_fold_val, y_pred, zero_division=0))
+        metrics['f1'].append(f1_score(y_fold_val, y_pred, zero_division=0))
+        metrics['roc_auc'].append(roc_auc_score(y_fold_val, y_pred_proba))
+        
+        # Calculate PR-AUC
+        precision_vals, recall_vals, _ = precision_recall_curve(y_fold_val, y_pred_proba)
+        metrics['pr_auc'].append(auc(recall_vals, precision_vals))
+        
+        # Create confusion matrix for this fold
+        cm = confusion_matrix(y_fold_val, y_pred)
+        
+        # Plot confusion matrix
+        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=axes[fold_num-1])
+        axes[fold_num-1].set_title(f'Fold {fold_num}\nTN={cm[0,0]}, FP={cm[0,1]}\nFN={cm[1,0]}, TP={cm[1,1]}')
+        axes[fold_num-1].set_xlabel('Predicted')
+        axes[fold_num-1].set_ylabel('Actual')
+        
+        # Log detailed fold results
+        logging.info(f"\nFold {fold_num} Results:")
+        logging.info(f"Confusion Matrix:")
+        logging.info(f"TN={cm[0,0]}, FP={cm[0,1]}")
+        logging.info(f"FN={cm[1,0]}, TP={cm[1,1]}")
+        logging.info(f"Validation set class distribution: {Counter(y_fold_val)}")
+        logging.info(f"Accuracy: {metrics['accuracy'][-1]:.4f}")
+        logging.info(f"Precision: {metrics['precision'][-1]:.4f}")
+        logging.info(f"Recall (Sensitivity): {metrics['recall'][-1]:.4f}")
+        logging.info(f"F1-Score: {metrics['f1'][-1]:.4f}")
+        logging.info(f"ROC-AUC: {metrics['roc_auc'][-1]:.4f}")
+        logging.info(f"PR-AUC: {metrics['pr_auc'][-1]:.4f}")
+        
+        fold_num += 1
+    
+    # Remove any unused subplots
+    for i in range(fold_num-1, len(axes)):
+        fig.delaxes(axes[i])
+    
+    plt.tight_layout()
+    plt.show()
+    
+    # Calculate and log average metrics with confidence intervals
+    logging.info("\nOverall Cross-Validation Results:")
+    for metric_name, values in metrics.items():
+        mean_val = np.mean(values)
+        std_val = np.std(values)
+        ci_95 = 1.96 * std_val / np.sqrt(n_splits)
+        
+        logging.info(f"{metric_name}:")
+        logging.info(f"  Mean: {mean_val:.4f}")
+        logging.info(f"  Std: {std_val:.4f}")
+        logging.info(f"  95% CI: [{mean_val - ci_95:.4f}, {mean_val + ci_95:.4f}]")
+    
+    return metrics
+
+def evaluate_final_model(model, X_train, X_test, y_train, y_test, model_name="Model"):
+    """
+    Perform final evaluation on both training and test sets with detailed confusion matrices
+    """
+    logging.info("\nFinal Model Evaluation:")
+    
+    # First perform cross-validation evaluation
+    cv_metrics = evaluate_model_with_cv(model, X_train, y_train, 
+                                      model_name=f"{model_name} (CV)", 
+                                      n_splits=5)
+    
+    # Then evaluate on the held-out test set
+    logging.info("\nHeld-out Test Set Evaluation:")
+    y_pred = model.predict(X_test)
+    y_pred_proba = model.predict_proba(X_test)[:, 1]
+    
+    # Calculate and log test set metrics
+    test_metrics = {
+        'accuracy': accuracy_score(y_test, y_pred),
+        'precision': precision_score(y_test, y_pred, zero_division=0),
+        'recall': recall_score(y_test, y_pred, zero_division=0),
+        'f1': f1_score(y_test, y_pred, zero_division=0),
+        'roc_auc': roc_auc_score(y_test, y_pred_proba)
+    }
+    
+    # Calculate PR-AUC for test set
+    precision_vals, recall_vals, _ = precision_recall_curve(y_test, y_pred_proba)
+    test_metrics['pr_auc'] = auc(recall_vals, precision_vals)
+    
+    # Create confusion matrix for test set
+    cm = confusion_matrix(y_test, y_pred)
+    
+    # Plot confusion matrix with detailed annotations
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+    plt.title(f'Confusion Matrix - Final Test Set\n' + 
+             f'TN={cm[0,0]}, FP={cm[0,1]}\n' +
+             f'FN={cm[1,0]}, TP={cm[1,1]}')
+    plt.xlabel('Predicted Label')
+    plt.ylabel('True Label')
+    plt.show()
+    
+    logging.info(f"\nTest Set Results (n={len(y_test)}):")
+    logging.info(f"Class distribution: {Counter(y_test)}")
+    logging.info("Confusion Matrix:")
+    logging.info(f"TN={cm[0,0]}, FP={cm[0,1]}")
+    logging.info(f"FN={cm[1,0]}, TP={cm[1,1]}")
+    for metric_name, value in test_metrics.items():
+        logging.info(f"{metric_name}: {value:.4f}")
+    
+    return cv_metrics, test_metrics
+
 def plot_feature_importance(model, feature_names, model_name="Model", top_n=20, normalize=False):
     """
     Plot the top_n feature importances from the trained model.
@@ -572,8 +714,15 @@ def main():
     }
     save_objects(imputer, encoder, scaler, best_model, paths)
 
-    # Evaluate the Model
-    evaluate_model(best_model, X_test_scaled, y_test, model_name="GA Optimized XGBClassifier")
+    # Replace the current evaluate_model call with:
+    cv_metrics, test_metrics = evaluate_final_model(
+        best_model, 
+        X_resampled,  # training data
+        X_test_scaled,  # test data
+        y_resampled,  # training labels
+        y_test,  # test labels
+        model_name="GA Optimized XGBClassifier"
+    )
 
     # Save the Trained Model
     model_save_path = Path("best_xgb_model_pygad.pkl")
